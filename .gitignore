@@ -6,7 +6,11 @@ recipes/*.draft.js
 .lastSeenAlertId
 # Downloads
 *.bin
+# Docs
+docs/*
 
+# Keep empty folders with .gitkeep files
+!/**/.gitkeep
 
 # Ugh. Macs.
 .DS_Store

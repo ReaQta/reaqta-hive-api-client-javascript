@@ -8,18 +8,7 @@ require('dotenv').config()
 require('colors')
 const fs = require('fs')
 const ReaqtaClient = require('../index')
-
-/**
- * Given a paginated API response, greedily paginate to to the end,
- * and return a promise that resolves to the concatenation of `result` arrays from each page.
- */
-const collateAllResults = (allResults = []) => reaqtaResponse => {
-  const nextAllResults = [...allResults, ...reaqtaResponse.data.result]
-  if (reaqtaResponse.getNextPage) {
-    return reaqtaResponse.getNextPage().then(collateAllResults(nextAllResults))
-  }
-  return Promise.resolve(nextAllResults)
-}
+const { collectPageResults } = require('../lib/pagination')
 
 const LAST_SEEN_ALERT_ID_FILENAME = '.lastSeenAlertId'
 /**
@@ -71,7 +60,7 @@ class LastSeenDatabase {
 }
 
 /**
- * Create an interface for managing interval polling of the alerts search API
+ * Create an interface to poll the alerts search API
  */
 class AlertPoller {
   constructor(db, apiClient, newAlertsHandler) {
@@ -119,7 +108,8 @@ class AlertPoller {
   }
 
   onPoll(alertId) {
-    return this.getAllAlertsSince(alertId).then(alerts => {
+    return this.getAllAlertsSince(alertId).then(res => {
+      const alerts = res.data
       if (alerts && alerts.length) {
         // NOTE: Default sort is id (ascending) for a sort with lastSeenId parameter
         //       So, we have to take the last item in our list of alerts
@@ -133,7 +123,7 @@ class AlertPoller {
   }
 
   getAllAlertsSince(lastSeenId) {
-    const collectAllPages = collateAllResults([])
+    const collectAllPages = collectPageResults([])
     return this.client.searchAlerts({ lastSeenId }).then(collectAllPages)
   }
 }
