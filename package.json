@@ -1,9 +1,9 @@
 {
     "name": "reaqta-api-client-javascript",
-    "version": "0.0.1",
-    "description": "An example JavaScript client for interacting with the ReaQta-Hive API",
+    "version": "3.5.0",
+    "description": "An example JavaScript client for interacting with the ReaQta-Hive Api",
     "main": "index.js",
-    "repository": "git@github.com:ReaQta/yogi-client-javascript.git",
+    "repository": "git@github.com:ReaQta/reaqta-api-client-javascript.git",
     "author": "Brett Beutell <b.beutell@reaqta.com>",
     "license": "MIT",
     "dependencies": {
