@@ -1,0 +1,279 @@
+:root {
+  --white: #fff;
+  --red: #FF4B66;
+  --red-warning: #c31e1e;
+  --green: #28f29a;
+  --yellow: #FFDD2E;
+  --yellow-mustard: #DAB602;
+  --blue: #1F8EFA;
+  --blue-light: #00C1FF;
+  --blue-even-more-light: #149DC9;
+  --another-fucking-blue: #0070DF;
+  --peach: #ffa16d;
+  --orange: #F9A926;
+  --orange-lightning: #FF8E00;
+
+  /* I have no idea how to name colors... */
+  --blue-kashmir: #585E80;
+  --blue-dusk: #31314F; /* NOTE - This is an old color that the new designs use quite a bit */
+  --blue-midnight: #181B30;
+  --ebony-clay: #20293C;
+
+  --bg-dark-content: #07091B;
+  --bg-dark-auth: var(--blue-midnight);
+
+  /* Just adding these here for now... these were used in new designs but not sure if they're sticking around */
+  --gray: #98A7B9;
+  --white-light: #EDEEF6;
+
+  /* TEXT */
+  --default-text-color: #B5B9DE;
+
+  /* GENERAL */
+  --tooltip-background: #1D2633;
+  --widget-outline: var(--blue-dusk);
+  --widget-outline-trans: rgba(49, 49, 79, 0.69); /* 31314F */
+  --widget-background: var(--blue-midnight);
+  --input-background: var(--ebony-clay);
+  --tags-chips-background: var(--blue-kashmir);
+
+  --high-color: var(--red);
+  --medium-color: var(--orange);
+  --low-color: var(--yellow);
+
+  --muted-color: #6D859A;
+  --muted-other-color: #607285; /* TODO - name this */
+
+  /* Links */
+  --link-color: #00C1FF;
+
+  /* Chips */
+  --chip-background: var(--blue);
+  --chip-background-alt: #3E4E6C;
+
+  /* Buttons */
+  --base-button: #363A57;
+  --base-button-focus: var(--blue-light);
+  --base-button-hover: #3C4165;
+  --base-button-active: #2A2E49;
+
+  --primary-button: #0E7C9F;
+  --primary-button-hover: #0C89B1;
+  --primary-button-active: #097294;
+
+  --danger-button: #B94052;
+  --danger-button-hover: #CD3F54;
+  --danger-button-active: #B0384A;
+
+  --valid-button: #28f29a;
+  --valid-button-hover: #28f29a;
+  --valid-button-active: #28f29a;
+
+  /* z-index definitions */
+  --z1: 1;
+  --z2: 10;
+  --z3: 100;
+  --z4: 1000;
+  --z5: 10000;
+  --z6: 100000;
+  --zMax: 2147483647;
+}
+
+html, body {
+  background-color: #07091b;
+  color: #b5b9de;
+  font-family: Roboto, 'Proxima Nova Light', Helvetica, Arial, sans-serif;
+
+  /* TODO:  Declare some color vars; */
+  /* color: #FF8E00; ORANGE */
+  /* color:  #F9A926; ORANGE */
+  /* color: #28f29a; GREEN */
+  /* color: #0070DF; DARKEST BLUE I GUESS? */
+  /* color: #1F8EFA;  DARKER BLUE (than links) */
+  /* color: #8A9EB2; */
+}
+
+h1, h2, h3.subsection-title {
+  color: white;
+}
+
+h3, h4 {
+  color: #f9f2f4;
+}
+
+a, a:visited, a:active {
+  color: #00C1FF;
+}
+
+section {
+  background: #181B30;
+}
+
+nav ul a,
+nav ul a:visited,
+nav ul a:active {
+  color: #8A9EB2;
+}
+
+.logo {
+  display: block;
+  background-image: url("/img/logo.svg");
+  background-repeat: no-repeat;
+  height: 24px;
+  margin: 0;
+}
+
+/* Support our custom subsections of nav */
+nav h4 {
+  margin: 2px 0 0;
+}
+
+h3 + h4 {
+  margin-top: -4px;
+}
+
+nav li {
+ display: block;
+ transition-duration: 0.5s;
+}
+
+nav li:hover {
+  cursor: pointer;
+}
+
+nav ul li .dropdown {
+  visibility: hidden;
+  opacity: 0;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  display: none;
+  padding-left: 12px;
+
+  transition: all 0.5s ease;
+}
+
+nav ul li.show > .dropdown {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+nav ul .rqt-resource,
+nav ul .rqt-resource:visited,
+nav ul .rqt-resource:active {
+  color: #b5b9de;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+nav .show .rqt-resource {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Reduce size of page title on docs pages */
+h1.page-title {
+  font-size: 24px;
+  color: #b5b9de;
+  letter-spacing: .01em;
+}
+
+/* Improve styles of the h1 in the readme on the docs homepage */
+.h1-readme {
+  margin: 0;
+  font-size: 36px;
+}
+
+/* Tutorials */
+.tutorial {
+  border-bottom: none;
+}
+
+
+/* Override jsdoc tables */
+table, th, td,
+tr > th:last-child {
+  border: none;
+}
+
+thead tr {
+  background-color: #07091b;
+}
+
+table {
+  border-bottom: solid 1px #07091b;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(216, 216, 216, .03);
+}
+
+.params .name, .props .name, .name code {
+  color: white; 
+}
+
+tbody code {
+  background-color: transparent;
+}
+
+td {
+  padding: 6px 8px;
+}
+
+/* Override jsdoc details blocks */
+.details {
+  border-left: 2px solid #666;
+}
+
+/* Override code block styles */
+.source, code {
+  border: none;
+  border-radius: 4px;
+}
+.source code {
+  padding: 16px 8px;
+  color: white;
+  background-color: #07091b;  
+}
+
+code {
+  color: white;
+  background-color: #07091b;  
+  padding: 3px 6px;
+  font-size: 12px;
+  margin: 0 1px;
+}
+
+code .pln, code .pun {
+  color: white;
+}
+
+/* Override string color in markdown syntax highlighter */
+.prettyprint .str {
+  color: #F9A926; /* ORANGE "ligtening" */  
+}
+
+.prettypprint .lit {
+  color: #FF8E00; /* ORANGE */  
+}
+
+.prettyprint .kwd {
+  /* color: #6D859A; */
+  /* color: #FFDD2E; */
+}
+
+/* --red: #FF4B66; */
+/* --red-warning: #c31e1e; */
+/* --green: #28f29a; */
+/* --yellow: #FFDD2E; */
+.prettyprint .typ {
+  color: #149DC9;
+  /* color: #1F8EFA; BLUE */
+  /* color: #149DC9; BLUE ... darker? */
+  /* color: #1F8EFA; */
+  /* color: #DAB602; MUSTARD */
+}
+
+.prettyprint .com {
+  color: #98A7B9;
+}

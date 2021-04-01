@@ -1,0 +1,25 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true,
+        "jest/globals": true
+    },
+    "extends": [
+        "standard",
+        "plugin:jest/recommended",
+        "plugin:jest/style"
+    ],
+    "plugins": [
+        "jest"
+    ],
+    "rules": {
+        "no-console": "warn",
+        "space-before-function-paren": ["error", {
+            "anonymous": "always",
+            "named": "never",
+            "asyncArrow": "always"
+        }]
+    }
+}

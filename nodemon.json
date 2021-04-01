@@ -1,0 +1,6 @@
+{
+  "exec": "yarn docs && yarn docs:serve",
+  "watch": ["lib", "static", "docs-serve.js", "jsdoc"],
+  "ignore": ["docs/*"],
+  "ext": "js,css,html,md,json"
+}
