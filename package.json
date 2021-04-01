@@ -1,8 +1,12 @@
 {
-    "name": "reaqta-api-client-javascript",
+    "name": "@reaqta/hive-api",
     "version": "3.5.0",
-    "description": "An example JavaScript client for interacting with the ReaQta-Hive Api",
-    "main": "index.js",
+    "description": "A javascript client for interacting with the ReaQta-Hive API",
+    "main": "lib/index.js",
+    "directories": {
+        "lib": "./lib"
+    },
+    "files": ["lib", "!lib/**/*.test.js"],
     "repository": "git@github.com:ReaQta/reaqta-api-client-javascript.git",
     "author": "Brett Beutell <b.beutell@reaqta.com>",
     "license": "MIT",

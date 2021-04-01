@@ -6,7 +6,7 @@
 
 require('dotenv').config()
 require('colors')
-const ReaQtaApiClient = require('../index')
+const ReaQtaApiClient = require('../lib')
 
 // NOTE: Change these variables to match the file you wish to download
 //       (or add the endpointId and path as environment variables)

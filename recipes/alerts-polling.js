@@ -7,7 +7,7 @@
 require('dotenv').config()
 require('colors')
 const fs = require('fs')
-const ReaqtaClient = require('../index')
+const { ReaqtaClient } = require('../lib')
 const { collectPageResults } = require('../lib/pagination')
 
 const LAST_SEEN_ALERT_ID_FILENAME = '.lastSeenAlertId'

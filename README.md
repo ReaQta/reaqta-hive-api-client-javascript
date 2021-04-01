@@ -11,10 +11,10 @@ Copy the `.env.example` file in the project root, like so:
 $ cp .env.example .env
 ```
 
-Then add your Application Id, Application Secret, and API url (including the base path to the api routes) to the `.env` file, like so:
+Then, add your Application Id, Application Secret, and API url (*including the base path to the api routes!*) to the `.env` file, like so:
 
 ```sh
-REAQTA_API_URL="https://my-dashboard.secure.org:14643/path/to/api"
+REAQTA_API_URL="https://my-dashboard.secure.org:14643/rqt-api"
 REAQTA_API_APP_ID="19189d32-af70-45c3-bbce-a1c2d27ddc74"
 REAQTA_API_SECRET_KEY="trustno1"
 ```
@@ -24,6 +24,8 @@ Afterwards, you can modify and run the scripts available in the `recipes` folder
 ```sh
 $ node recipes/alerts-polling
 ```
+
+Once you configure your `.env` file, an API client will be automatically created for you in the reply. (See: **REPL**, below)
 
 ## Documentation
 

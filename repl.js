@@ -3,7 +3,7 @@ require('colors')
 const fs = require('fs')
 const repl = require('repl')
 
-const ReaQtaClient = require('./lib/client')
+const { ReaQtaClient } = require('./lib/client')
 const { retry } = require('./lib/retry')
 const { collectPageResults } = require('./lib/pagination')
 
