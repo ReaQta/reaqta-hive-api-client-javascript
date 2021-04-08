@@ -10,7 +10,7 @@
         "lib",
         "!lib/**/*.test.js"
     ],
-    "repository": "git@github.com:ReaQta/reaqta-api-client-javascript.git",
+    "repository": "git@github.com:ReaQta/reaqta-hive-api-client-javascript.git",
     "author": "Brett Beutell <b.beutell@reaqta.com>",
     "license": "MIT",
     "dependencies": {
