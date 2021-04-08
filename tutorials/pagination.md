@@ -5,12 +5,13 @@ If there are additional pages of results for your search query, the response ret
 Unsurprisingly, you can use this method to fetch the next page of results.
 
 ```js
-const ReaqtaClient = require('rqt-api')
+const ReaqtaClient = require('@reaqta/hive-api')
 
 const reaqtaClient = new ReaqtaClient({
   baseUrl: process.env.REAQTA_API_URL,
   appId: process.env.REAQTA_API_APP_ID,
-  appSecret: process.env.REAQTA_API_SECRET_KEY
+  appSecret: process.env.REAQTA_API_SECRET_KEY,
+  insecure: !!process.env.REAQTA_API_INSECURE
 })
 
 reaqtaClient
@@ -28,13 +29,14 @@ reaqtaClient
 If you would like to paginate through all responses, and collect their results into a single array, there is a helper function to do that:
 
 ```js
-const ReaqtaClient = require('rqt-api')
-const { collectPageResults } = require('rqt-api/lib/pagination')
+const ReaqtaClient = require('@reaqta/hive-api')
+const { collectPageResults } = require('@reaqta/hive-api/lib/pagination')
 
 const reaqtaClient = new ReaqtaClient({
   baseUrl: process.env.REAQTA_API_URL,
   appId: process.env.REAQTA_API_APP_ID,
-  appSecret: process.env.REAQTA_API_SECRET_KEY
+  appSecret: process.env.REAQTA_API_SECRET_KEY,
+  insecure: !!process.env.REAQTA_API_INSECURE
 })
 
 // This promise will return once we've fetched all pages.
