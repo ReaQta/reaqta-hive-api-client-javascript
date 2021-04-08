@@ -25,7 +25,7 @@ Afterwards, you can modify and run the scripts available in the `recipes` folder
 $ node recipes/alerts-polling
 ```
 
-Once you configure your `.env` file, an API client will be automatically created for you in the reply. (See: **REPL**, below)
+Once you configure your `.env` file, an API client will be automatically created for you in the repl. (See: **REPL**, below)
 
 ## Documentation
 
@@ -42,7 +42,7 @@ $ npm run docs # or: `yarn docs`
 $ npm run docs:serve # or: `yarn docs:serve`
 ```
 
-The docs will then be reachable at [http://localhost:61108]()
+The docs will then be reachable at [http://localhost:61108](http://localhost:61108)
 
 ## REPL
 

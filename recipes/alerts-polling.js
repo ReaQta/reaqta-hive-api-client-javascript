@@ -7,7 +7,7 @@
 require('dotenv').config()
 require('colors')
 const fs = require('fs')
-const { ReaqtaClient } = require('../lib')
+const ReaqtaClient = require('../lib')
 const { collectPageResults } = require('../lib/pagination')
 
 const LAST_SEEN_ALERT_ID_FILENAME = '.lastSeenAlertId'
@@ -137,7 +137,8 @@ class AlertPoller {
 const reaqtaClient = new ReaqtaClient({
   baseUrl: process.env.REAQTA_API_URL,
   appId: process.env.REAQTA_API_APP_ID,
-  appSecret: process.env.REAQTA_API_SECRET_KEY
+  appSecret: process.env.REAQTA_API_SECRET_KEY,
+  insecure: !!process.env.REAQTA_API_INSECURE
 })
 // Create a way to persist the last seen alert
 const lastSeenDb = new LastSeenDatabase()

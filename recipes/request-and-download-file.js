@@ -17,8 +17,7 @@ const client = new ReaQtaApiClient({
   baseUrl: process.env.REAQTA_API_URL,
   appId: process.env.REAQTA_API_APP_ID,
   appSecret: process.env.REAQTA_API_SECRET_KEY,
-  // NOTE: Uncomment this if your api is behind a self-signed certificate
-  // insecure: true
+  insecure: !!process.env.REAQTA_API_INSECURE
 })
 
 /**

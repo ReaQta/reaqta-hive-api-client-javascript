@@ -6,7 +6,10 @@
     "directories": {
         "lib": "./lib"
     },
-    "files": ["lib", "!lib/**/*.test.js"],
+    "files": [
+        "lib",
+        "!lib/**/*.test.js"
+    ],
     "repository": "git@github.com:ReaQta/reaqta-api-client-javascript.git",
     "author": "Brett Beutell <b.beutell@reaqta.com>",
     "license": "MIT",
@@ -19,6 +22,7 @@
         "dotenv": "^8.2.0",
         "eslint": "^7.21.0",
         "eslint-config-standard": "^16.0.2",
+        "eslint-plugin-import": "^2.22.1",
         "eslint-plugin-jest": "^24.2.1",
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-promise": "^4.3.1",
