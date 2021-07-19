@@ -20,6 +20,7 @@
             "anonymous": "always",
             "named": "never",
             "asyncArrow": "always"
-        }]
+        }],
+        "jest/no-conditional-expect": "warn"
     }
 }
