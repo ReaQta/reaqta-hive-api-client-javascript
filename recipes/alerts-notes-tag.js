@@ -3,12 +3,13 @@
 /**
  * @file An example implementation of a script that test
  * the tag/notes new APIs ReaQta-Hive Api for newly seen alerts
- * 
+ *
  * @param {string} type - Tags or notes
  * @param {string} id - The id of the alert
  * @param {string} content - Content of the tag or note
  * @param {string} operation - Only works for tags: add or remove
- * expample:
+ *
+ * Example:
  *  node alerts-notes-tag.js tag 830059572294057986 newTag add
  *  node alerts-notes-tag.js tag 830059572294057986 newTag remove
  *  node alerts-notes-tag.js tag 830059572294057986 'new Tag' remove
