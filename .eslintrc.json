@@ -21,6 +21,6 @@
             "named": "never",
             "asyncArrow": "always"
         }],
-        "jest/no-conditional-expect": "warn"
+        "jest/no-conditional-expect": "off"
     }
 }
