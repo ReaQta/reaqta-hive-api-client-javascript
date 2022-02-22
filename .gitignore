@@ -4,6 +4,8 @@ downloads/*
 # Recipes that are not ready
 recipes/*.draft.js
 .lastSeenAlertId
+# Samples of events from the sample-events.js recipe
+samples
 # Downloads
 *.bin
 # Docs
