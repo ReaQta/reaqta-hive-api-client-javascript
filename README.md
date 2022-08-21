@@ -5,7 +5,7 @@ A JavaScript client for interacting with the ReaQta-Hive API.
 Install via NPM:
 
 ```sh
-$ npm install @reaqta/hive-api
+npm install @reaqta/hive-api
 ```
 
 ## Quick Start
@@ -16,7 +16,7 @@ Next, create an Application in your dashboard, and record its `id` and `secret`.
 
 Copy the `.env.example` file in the project root, like so:
 ```sh
-$ cp .env.example .env
+cp .env.example .env
 ```
 
 Then, add your Application Id, Application Secret, and API url (*including the base path to the api routes!*) to the `.env` file, like so:
@@ -43,11 +43,11 @@ Documentation (including some tutorials) for this API client exists in the `docs
 
 ```sh
 # Install dependencies
-$ npm install
+npm install
 # Generate docs
-$ npm run docs
+npm run docs
 # Serve the docs locally
-$ npm run docs:serve
+npm run docs:serve
 ```
 
 The docs will then be reachable at [http://localhost:61108](http://localhost:61108)
