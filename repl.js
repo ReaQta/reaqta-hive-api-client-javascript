@@ -63,7 +63,7 @@ function saveHistory(ourReplServer) {
  * - Instantiates an api client, if env vars are defined
  * - Sets the repl prompt
  */
-function setupReplEnvironment(ourReplServer) {
+function setUpReplEnvironment(ourReplServer) {
   // Try loading history file
   try {
     fs.statSync(HISTORY_FILE)
@@ -104,6 +104,22 @@ function setupReplEnvironment(ourReplServer) {
 
   replServer.setPrompt(getPrompt())
   replServer.write('', { ctrl: true, name: 'c' })
+
+  const $$ = ((n = 1) => (r) => {
+    replServer.context['$' + n] = r
+    console.log('Assigned global var: $' + n)
+    n++
+  })()
+
+  $$.as = str => r => {
+    replServer.context[str] = r
+    console.log('Assigned global var: ' + str)
+  }
+
+  const $$e = $$.as('err');
+
+  replServer.context.$$ = $$
+  replServer.context.$$e = $$e
 }
 
 const replServer = repl.start({
@@ -111,7 +127,7 @@ const replServer = repl.start({
   useColors: true
 })
 
-setupReplEnvironment(replServer)
+setUpReplEnvironment(replServer)
 
 replServer.once('exit', () => {
   saveHistory(replServer)
